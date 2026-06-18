@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="cano">아메리카노</button>
+    <button id="caffe">카페라떼</button>
+    <button id="latte">연유라뗴</button>
+    <button id="icetea">아이스티</button>
+    <div id="printcano"></div>
+    <div id="printcaffe"></div>
+    <div id="printlatte"></div>
+    <div id="printicetea"></div>
+</body>
+</html>
+
+<script>
+    let cano = 0;
+    document.getElementById('cano').onclick = function(){
+        //console.log('cano 누름');
+        document.getElementById('printcano').textContent = '아메리카노' + cano + " 개";
+    }
+</script>

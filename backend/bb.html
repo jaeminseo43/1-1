@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자 관리 - 입력 및 삭제</title>
+    <style>
+        /* 기본 스타일 초기화 및 폰트 설정 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #f1f5f9;
+            color: #1e293b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        /* 전체 감싸는 컨테이너 */
+        .wrapper {
+            width: 100%;
+            max-width: 450px;
+        }
+
+        /* 상단 타이틀 영역 */
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        h1.page-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #4f46e5;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .notice-box {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* 개별 카드 스타일 (등록 / 삭제 분리) */
+        .card {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            margin-bottom: 1.5rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .card h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 1.25rem;
+        }
+
+        /* 입력 폼 스타일 */
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 0.4rem;
+            text-transform: uppercase;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            color: #0f172a;
+            transition: all 0.2s ease;
+            background-color: #f8fafc;
+        }
+
+        /* 인풋창 포커스 효과 */
+        .form-control:focus {
+            outline: none;
+            border-color: #4f46e5;
+            background-color: #ffffff;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+        }
+
+        /* 버튼 기본 스타일 */
+        .btn {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            margin-top: 0.5rem;
+        }
+
+        /* 전송 버튼 (블루) */
+        .btn-primary {
+            background-color: #4f46e5;
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background-color: #4338ca;
+        }
+
+        /* 삭제 버튼 (레드) */
+        .btn-danger {
+            background-color: #ef4444;
+            color: #ffffff;
+        }
+
+        .btn-danger:hover {
+            background-color: #dc2626;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <header>
+        <h1 class="page-title">bb</h1>
+        <div class="notice-box">
+            bb html 파일입니다.<br/>
+            내일 진행을 많이 할게요! 🚀
+        </div>
+    </header>
+
+    <div class="card">
+        <h2>사용자 정보 입력</h2>
+        <form action="/adduser" method="post">
+            <div class="form-group">
+                <label for="email">email</label>
+                <input type="text" name="email" id="email" class="form-control" placeholder="이메일을 입력하세요">
+            </div>
+            <div class="form-group">
+                <label for="name">name</label>
+                <input type="text" name="name" id="name" class="form-control" placeholder="이름을 입력하세요">
+            </div>
+            <button type="submit" class="btn btn-primary">전송</button>
+        </form>
+    </div>
+
+    <div class="card">
+        <h2>삭제할 아이디를 입력하세요</h2>
+        <form action="/deluser" method="post">
+            <div class="form-group">
+                <label for="id">id</label>
+                <input type="text" name="id" id="id" class="form-control" placeholder="삭제할 ID를 입력하세요">
+            </div>
+            <button type="submit" class="btn btn-danger">삭제</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

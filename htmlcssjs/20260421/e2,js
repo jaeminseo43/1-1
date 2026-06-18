@@ -1,0 +1,11 @@
+const unit = {
+    name: "재민",
+    attack(weapon) {
+        return `${weapon}로 공격합니다.`;
+    }
+};
+unit['0'] = "zero";
+
+
+console.log(unit.name);
+console.log(unit.attack("검"));
